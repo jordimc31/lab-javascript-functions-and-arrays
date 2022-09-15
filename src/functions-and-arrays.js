@@ -112,17 +112,18 @@ function uniquifyArray(array) {
   let arrayToCheck = array;
   console.log("Test if uniquifyArray is called... so yes! : ");
 
-  array.forEach((wordToCheck, k) => {
+  array.forEach((wordToCheck) => {
     console.log(array.length);
     let count = 0;
     for (i = 0; i < array.length; i++) {
       if (wordToCheck == arrayToCheck[i]) count++;
       if (count > 1) {
-        console.log("Duplicate here: " + i + ", " + k);
+        arrayToCheck.pop();
         count = 0;
       }
     }
   });
+  return arrayToCheck;
 }
 uniquifyArray(wordsUnique);
 
